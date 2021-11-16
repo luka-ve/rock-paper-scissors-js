@@ -54,7 +54,6 @@ function scorePly(player, ai) {
 function checkForEndOfGame() {
   if (playerScore == 3 || aiScore == 3) {
     gameRunning = false;
-    setup();
   }
 }
 
@@ -62,11 +61,13 @@ buttons = {
   rock: document.querySelector("#rock"),
   paper: document.querySelector("#paper"),
   scissors: document.querySelector("#scissors"),
+  reset: document.querySelector(".reset-btn"),
 };
 
 buttons.rock.onclick = () => ply("rock");
 buttons.paper.onclick = () => ply("paper");
 buttons.scissors.onclick = () => ply("scissors");
+buttons.reset.onclick = () => setup();
 
 function setup() {
   playerScore = 0;
