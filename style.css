@@ -11,9 +11,16 @@
 
 * {
   font-family: Agency-FB, Helvetica, Arial, sans-serif;
+  color: white;
 }
 
 body {
+  margin: 0;
+  width: 100vw;
+  background-color: black;
+}
+
+.page {
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -35,11 +42,27 @@ p#rules {
   display: flex;
   justify-content: space-between;
   margin: 40px 0px;
+  gap: 16px;
 }
 
 .rps-choice {
+  box-sizing: border-box;
   width: 150px;
-  height: auto;
+  height: 150px;
+  border: 3px solid black;
+  padding: 15px;
+  border-radius: 15px;
+}
+
+.rps-choice:hover {
+  transition-duration: 0;
+  filter: invert(0%);
+  border-color: white;
+}
+
+.rps-choice:active {
+  padding: 18px;
+  transition-duration: 0ms;
 }
 
 .score-container {
@@ -54,4 +77,9 @@ p#rules {
   font-size: 40px;
   text-align: center;
   flex: 1 0 100%;
+}
+
+input[type="image"] {
+  -webkit-filter: invert(100%);
+  filter: invert(100%);
 }
