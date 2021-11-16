@@ -13,7 +13,10 @@
       <div class="content">
         <h1>Rock Paper Scissors</h1>
 
-        <p id="rules">Make your choice!</p>
+        <div class="rules">
+          <p>Make your choice!</p>
+          <p>Win 3 out of 5.</p>
+        </div>
 
         <div class="selection-buttons">
           <input
@@ -40,16 +43,18 @@
         </div>
 
         <div class="score-container">
-          <div class="score-indicator" id="player-score">
+          <div class="score-indicator">
             <p>You</p>
-            <p>0</p>
+            <p id="player-score">0</p>
           </div>
-          <div class="score-indicator" id="ai-score">
+          <div class="score-indicator">
             <p>AI</p>
-            <p>0</p>
+            <p id="ai-score">0</p>
           </div>
         </div>
       </div>
     </div>
+
+    <script src="script.js"></script>
   </body>
 </html>
