@@ -85,10 +85,10 @@ buttons = {
   reset: document.querySelector(".reset-btn"),
 };
 
-buttons.rock.onclick = () => ply("rock");
-buttons.paper.onclick = () => ply("paper");
-buttons.scissors.onclick = () => ply("scissors");
-buttons.reset.onclick = () => setup();
+buttons.rock.addEventListener("click", () => ply("rock"));
+buttons.paper.addEventListener("click", () => ply("paper"));
+buttons.scissors.addEventListener("click", () => ply("scissors"));
+buttons.reset.addEventListener("click", () => setup());
 
 function setup() {
   playerScore = 0;
