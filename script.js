@@ -30,6 +30,25 @@ function ply(playerChoice) {
 function updateUI() {
   document.getElementById("player-score").innerHTML = playerScore;
   document.getElementById("ai-score").innerHTML = aiScore;
+
+  if (!gameRunning) {
+    const winner = document.createElement("p");
+    winner.id = "winner";
+
+    if (playerScore > aiScore) {
+      winner.textContent = "You won";
+    } else if (aiScore > playerScore) {
+      winner.textContent = "AI won";
+    }
+
+    winner.setAttribute(
+      "style",
+      "color: blue; font-size: 30px; text-align: center;"
+    );
+
+    const scoreContainer = document.querySelector("div.score-container");
+    scoreContainer.appendChild(winner);
+  }
 }
 
 function scorePly(player, ai) {
@@ -54,6 +73,8 @@ function scorePly(player, ai) {
 function checkForEndOfGame() {
   if (playerScore == 3 || aiScore == 3) {
     gameRunning = false;
+
+    updateUI();
   }
 }
 
@@ -75,7 +96,10 @@ function setup() {
   nRounds = 0;
 
   updateUI();
+  const scoreContainer = document.querySelector("div.score-container");
+  scoreContainer.removeChild(document.getElementById("winner"));
   gameRunning = true;
+  updateUI();
 }
 
 setup();
