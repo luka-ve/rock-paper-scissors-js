@@ -28,8 +28,8 @@ function ply(playerChoice) {
 }
 
 function updateUI() {
-  document.getElementById("player-score").innerHTML = playerScore;
-  document.getElementById("ai-score").innerHTML = aiScore;
+  document.getElementById("player-score").textContent = playerScore;
+  document.getElementById("ai-score").textContent = aiScore;
 
   if (!gameRunning) {
     const winner = document.createElement("p");
@@ -95,10 +95,14 @@ function setup() {
   aiScore = 0;
   nRounds = 0;
 
-  updateUI();
   const scoreContainer = document.querySelector("div.score-container");
-  scoreContainer.removeChild(document.getElementById("winner"));
+  const winnerP = document.getElementById("winner");
+  if (winnerP) {
+    scoreContainer.removeChild(winnerP);
+  }
+
   gameRunning = true;
+
   updateUI();
 }
 
